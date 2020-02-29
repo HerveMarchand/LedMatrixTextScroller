@@ -9,15 +9,17 @@ MAX7219			KEYWORD1
 Text			KEYWORD1
 scrolling		KEYWORD1
 scroller		KEYWORD1
-8x8 Led Matrix		KEYWORD1
+8x8 Led Matrix	KEYWORD1
+Arduino	    	KEYWORD1
+ESP8266 		KEYWORD1
+
 
 ####################################################
 # Methods and Functions (KEYWORD2)
 ####################################################
 
 Text Display		KEYWORD2
-Arduino     		KEYWORD2
-Library     		KEYWORD2
+Message     		KEYWORD2
 
 ####################################################
 # Constants (LITERAL1)
