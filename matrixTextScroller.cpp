@@ -120,7 +120,6 @@ void MatrixTextScrollerClass::write_Matrix_byte(unsigned char DATA)
  
 void MatrixTextScrollerClass::write_Matrix(unsigned char address, unsigned char dat)
 {
-  // dumpPinConfig();
   digitalWrite(Matrix_pinCS,LOW);
   write_Matrix_byte(address);          
   write_Matrix_byte(dat);               
@@ -130,7 +129,7 @@ void MatrixTextScrollerClass::write_Matrix(unsigned char address, unsigned char 
 int MatrixTextScrollerClass::getMatrixCharEntry(char asciiVal){
   int myEntry = 0;
 
-  if(asciiVal>=93) {
+  if(asciiVal >= 93) {
     myEntry = asciiVal - 33;
   } else {
     myEntry = asciiVal - 32;
@@ -145,7 +144,7 @@ unsigned char MatrixTextScrollerClass::getLineToDisplay(int column, int line){
   int entry;
 
   unsigned char myCharLine;
-  unsigned tmpCharLine;
+  unsigned char tmpCharLine;
 
   currentCharInString = floor(column / 8); 
 
@@ -154,7 +153,6 @@ unsigned char MatrixTextScrollerClass::getLineToDisplay(int column, int line){
   myCharLine = matrixCharSet[entry][line];
   
   myCharLine = myCharLine << (column - 8 * currentCharInString);
-
 
   if(currentCharInString < (textToDisplayStr.length() - 1)) {
     entry = getMatrixCharEntry(textToDisplayStr.charAt(currentCharInString + 1));
