@@ -63,7 +63,13 @@ void MatrixTextScrollerClass::refresh(){
   
 }
 
-void MatrixTextScrollerClass::setTextToDisplay(String textStr, int nbLoop = -1){
+void MatrixTextScrollerClass::setTextToDisplay(String textStr){
+  textToDisplayStr = " " + textStr;
+  displayColumn = 0;
+  cleanMatrix();
+}
+
+void MatrixTextScrollerClass::setTextToDisplayWithLoopNumber(String textStr, int nbLoop){
   textToDisplayStr = " " + textStr;
   numberOfLoop  = nbLoop;
   displayColumn = 0;

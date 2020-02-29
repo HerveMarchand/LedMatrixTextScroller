@@ -167,7 +167,8 @@ class MatrixTextScrollerClass {
       void cleanMatrix();
       void setTextUpdatePeriod(int period);
       void refresh();
-      void setTextToDisplay(String textStr, int nbLoop = -1); // To set the text to display and the number of scrowling loop (-1 means infinite loop)
+      void setTextToDisplay(String textStr);                           // To set the text to display
+      void setTextToDisplayWithLoopNumber(String textStr, int nbLoop); // To set the text to display and the number of scrowling loop (-1 means infinite loop)
 
 };
 
