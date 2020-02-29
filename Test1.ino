@@ -9,7 +9,7 @@ MatrixTextScrollerClass myTestMatrix = MatrixTextScrollerClass(pinCLK, pinCS, pi
 void setup()
 {
 
-  myTestMatrix.setTextToDisplayWithLoopNumber("This is my text");
+  myTestMatrix.setTextToDisplay("This is my text");
   myTestMatrix.setTextUpdatePeriod(35);
   myTestMatrix.setIntensity(3);
 }

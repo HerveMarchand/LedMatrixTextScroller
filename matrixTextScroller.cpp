@@ -65,6 +65,7 @@ void MatrixTextScrollerClass::refresh(){
 
 void MatrixTextScrollerClass::setTextToDisplay(String textStr){
   textToDisplayStr = " " + textStr;
+  numberOfLoop  = -1; // Loop forever
   displayColumn = 0;
   cleanMatrix();
 }
