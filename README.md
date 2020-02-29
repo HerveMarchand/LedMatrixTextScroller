@@ -1,2 +1,2 @@
 # LedMatrixTextScroller
-Allows to display a text using scroll mode on 8x8 Led Matrix - MAX7219 
+This Arduino Library allows to display a text using scroll mode on 8x8 Led Matrix - MAX7219 
