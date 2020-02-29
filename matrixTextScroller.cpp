@@ -40,8 +40,8 @@ MatrixTextScrollerClass::MatrixTextScrollerClass(int clk, int cs, int din){
 
 void MatrixTextScrollerClass::refresh(){
     
-  if((millis() < lastUpdatePeriodMs || millis() - lastUpdatePeriodMs < Matrix_Text_Update_Period) ||
-     (0 == numberOfLoop)) return;
+  if(( millis() < lastUpdatePeriodMs || millis() - lastUpdatePeriodMs < Matrix_Text_Update_Period ) ||
+     ( 0 == numberOfLoop )) return;
      
   lastUpdatePeriodMs = millis();
 
