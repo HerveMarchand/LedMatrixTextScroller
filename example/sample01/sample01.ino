@@ -8,15 +8,10 @@ MatrixTextScrollerClass myTestMatrix = MatrixTextScrollerClass(pinCLK, pinCS, pi
 
 void setup()
 {
-
-  Serial.begin(115200); // open the serial port at 9600 bps:
-
   myTestMatrix.setTextToDisplay("This is my text");
   myTestMatrix.setTextUpdatePeriod(35);
   myTestMatrix.setIntensity(3);
 }
-
-
 
 
 void loop()
