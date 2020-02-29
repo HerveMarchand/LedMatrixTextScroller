@@ -16,6 +16,8 @@ scroller		KEYWORD1
 ####################################################
 
 Text Display		KEYWORD2
+Arduino     		KEYWORD2
+Library     		KEYWORD2
 
 ####################################################
 # Constants (LITERAL1)
