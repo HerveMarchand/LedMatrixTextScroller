@@ -11,11 +11,13 @@ void setup()
   myTestMatrix.setTextToDisplay("This is my text");
   myTestMatrix.setTextUpdatePeriod(35);
   myTestMatrix.setIntensity(3);
+  myTestMatrix.startDisplay();
 }
 
 
 void loop()
 { 
+    
   myTestMatrix.refresh();
 
 }
