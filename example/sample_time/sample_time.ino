@@ -20,11 +20,8 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
 
 void setup(){
-  Serial.begin(115200);
 
-  myTestMatrix.setTextToDisplay("DATE");
   myTestMatrix.setTextUpdatePeriod(30);
-  myTestMatrix.setIntensity(3);
 
   WiFi.begin(ssid, password);
 
@@ -32,8 +29,6 @@ void setup(){
     delay ( 500 );
     Serial.print ( "." );
   }
-
-  Serial.println( "Connected" );
 
   timeClient.begin();
   
