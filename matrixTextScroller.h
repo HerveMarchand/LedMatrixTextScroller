@@ -153,6 +153,7 @@ class MatrixTextScrollerClass {
       int    displayColumn = 0;
       int    numberOfLoop  = -1; // -1 means infinite loop
       int    defaultTextIntensity = 10;
+      bool   isActiveDisplayTextStatus = false; // false indicate no text is displayed
 
       void write_Matrix_byte(unsigned char DATA) ;
       void write_Matrix(unsigned char address,unsigned char dat);
@@ -169,6 +170,9 @@ class MatrixTextScrollerClass {
       void refresh();
       void setTextToDisplay(String textStr);                           // To set the text to display
       void setTextToDisplayWithLoopNumber(String textStr, int nbLoop); // To set the text to display and the number of scrowling loop (-1 means infinite loop)
+      void startDisplay();
+      void stopDisplay();
+      bool getDisplayStatus();
 
 };
 

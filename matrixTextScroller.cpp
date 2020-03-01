@@ -41,7 +41,7 @@ MatrixTextScrollerClass::MatrixTextScrollerClass(int clk, int cs, int din){
 void MatrixTextScrollerClass::refresh(){
     
   if(( millis() < lastUpdatePeriodMs || millis() - lastUpdatePeriodMs < Matrix_Text_Update_Period ) ||
-     ( 0 == numberOfLoop )) return;
+     ( false == isActiveDisplayTextStatus )) return;
      
   lastUpdatePeriodMs = millis();
 
@@ -58,7 +58,10 @@ void MatrixTextScrollerClass::refresh(){
   if(displayColumn > textToDisplayStr.length() * 8 - 1) {
     displayColumn = 0;
     cleanMatrix();
-    if(-1 != numberOfLoop) numberOfLoop--;
+    if(-1 != numberOfLoop) {
+        numberOfLoop--;
+        isActiveDisplayTextStatus = false;
+    }
   }
   
 }
@@ -67,6 +70,7 @@ void MatrixTextScrollerClass::setTextToDisplay(String textStr){
   textToDisplayStr = " " + textStr;
   numberOfLoop  = -1; // Loop forever
   displayColumn = 0;
+  isActiveDisplayTextStatus = false;
   cleanMatrix();
 }
 
@@ -74,6 +78,7 @@ void MatrixTextScrollerClass::setTextToDisplayWithLoopNumber(String textStr, int
   textToDisplayStr = " " + textStr;
   numberOfLoop  = nbLoop;
   displayColumn = 0;
+  isActiveDisplayTextStatus = false;
   cleanMatrix();
 }
 
@@ -93,6 +98,19 @@ void MatrixTextScrollerClass::cleanMatrix(){
 
 void MatrixTextScrollerClass::setTextUpdatePeriod(int period){
   Matrix_Text_Update_Period = period;
+}
+
+void MatrixTextScrollerClass::startDisplay(){
+  isActiveDisplayTextStatus = true;
+}
+
+void MatrixTextScrollerClass::stopDisplay(){
+  isActiveDisplayTextStatus = false;
+  cleanMatrix();
+}
+
+bool MatrixTextScrollerClass::getDisplayStatus(){
+  return isActiveDisplayTextStatus;
 }
 
 // --- Private routines ---
